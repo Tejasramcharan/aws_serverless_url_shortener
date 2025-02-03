@@ -1,0 +1,44 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "URL Shortener API",
+    "description": "API for shortening URLs",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/shorten": {
+      "post": {
+        "summary": "Shorten a URL",
+        "operationId": "shortenUrl",
+        "parameters": [
+          {
+            "name": "longUrl",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "longUrl": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Shortened URL response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "shortenedUrl": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

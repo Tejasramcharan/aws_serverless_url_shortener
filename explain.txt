@@ -1,0 +1,67 @@
+Introduction
+This project is a fully serverless URL shortener built using only the AWS Management Console.
+It enables users to shorten long URLs and retrieve them using a unique short link.
+The goal is to showcase AWS serverless architecture and hands-on cloud deployment.
+1️⃣ Architecture Overview
+🖼 Key AWS Services Used:
+
+Amazon S3 – Hosts the frontend (static website).
+Amazon CloudFront – Distributes the website & API with caching and HTTPS support.
+Amazon API Gateway – Acts as a bridge between the frontend and backend.
+AWS Lambda – Backend logic for storing and retrieving URLs.
+Amazon DynamoDB – NoSQL database for mapping short URLs to long URLs.
+Amazon Route 53 – Manages the custom domain.
+AWS Certificate Manager – Provides SSL/TLS for secure HTTPS access.
+📌 Flow of Requests:
+
+User visits the frontend hosted on S3 via a browser.
+Request is routed via CloudFront (CDN).
+Frontend interacts with the API Gateway when submitting a URL.
+API Gateway triggers an AWS Lambda function.
+Lambda processes the request and stores/retrieves data from DynamoDB.
+When a short URL is accessed, it redirects the user to the original long URL.
+2️⃣ Brief Project Description
+A scalable, cost-efficient, and serverless URL shortener.
+Eliminates the need for managing servers, as AWS handles all backend infrastructure.
+Provides a fully managed deployment with built-in security (HTTPS via ACM).
+3️⃣ Step-by-Step Implementation
+🔹 Frontend (Static Website - S3 & CloudFront)
+
+Hosted on Amazon S3 with CloudFront acting as a CDN for better performance.
+Uses JavaScript & Bootstrap for UI and API calls.
+🔹 Backend (Lambda & API Gateway)
+
+Lambda function (Python) handles API requests.
+API Gateway routes frontend requests to the backend.
+🔹 Database (DynamoDB)
+
+Stores mappings of short URLs to long URLs in a NoSQL format.
+🔹 Custom Domain (Route 53 & Certificate Manager)
+
+Route 53 is used for domain management.
+AWS Certificate Manager provides a free SSL/TLS certificate.
+4️⃣ Hosting & Deployment
+✅ Frontend Deployment:
+
+Static website uploaded to S3 bucket.
+CloudFront serves the website with HTTPS.
+✅ Backend Deployment:
+
+Lambda function created manually in the AWS Console.
+API Gateway configured to trigger Lambda.
+DynamoDB table set up to store URLs.
+✅ Domain Setup:
+
+Route 53 is configured for a custom domain.
+SSL/TLS enabled via AWS Certificate Manager.
+5️⃣ File Structure (AWS Resources Instead of Code Files)
+Since this project is built using only AWS Management Console, there is no local file structure like in traditional coding projects.
+Instead, everything is organized as AWS resources:
+
+Amazon S3 (Static website files)
+AWS Lambda (Python function for URL processing)
+Amazon DynamoDB (Table for storing URL mappings)
+Amazon API Gateway (Routing API calls)
+Amazon CloudFront (CDN for performance & security)
+Amazon Route 53 (Domain name & DNS management)
+AWS Certificate Manager (HTTPS certificates)
