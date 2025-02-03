@@ -32,6 +32,9 @@ Amazon Route 53 & AWS Certificate Manager
 
 Everything in this project is deployed directly via the AWS Management Console, making it ideal for those who want hands-on experience with AWS services.
 
+#DOMAIN
+shortmyurl.in
+
 
 
 
